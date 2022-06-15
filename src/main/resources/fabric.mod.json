@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.globalista.integrated_delight.GID"
+      "com.globalista.integrated_delight.ID"
     ]
   },
 

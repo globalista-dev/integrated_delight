@@ -8,9 +8,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.globalista.integrated_delight.GID.MOD_ID;
+import static com.globalista.integrated_delight.ID.MOD_ID;
 
-public class ModRegister {
+public class IDRegister {
 
     public static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
