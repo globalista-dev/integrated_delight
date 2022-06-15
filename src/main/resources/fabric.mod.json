@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "gfi",
+  "version": "${version}",
+
+  "name": "Globa's Integrated Delight",
+  "description": "Required for Globa's Medieval Modpack. Integrates Farmer's Delight and Expanded Delight with a bunch of mods",
+  "authors": [
+    "yGlobalista"
+  ],
+  "contact": {
+    "homepage": "https://github.com/globalista-dev",
+    "sources": "https://github.com/globalista-dev/GFI"
+  },
+
+  "license": "CC-BY-4.0",
+  "icon": "assets/integrated_delight/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.globalista.integrated_delight.GID"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
