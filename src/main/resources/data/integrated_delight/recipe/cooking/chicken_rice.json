@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "fabric:crops/rice"
+    },
+    {
+      "item": "bewitchment:garlic"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "farmersdelight:tomatoes"
+    },
+    {
+      "tag": "c:salt_dusts"
+    }
+  ],
+  "result": {
+    "item": "integrated_delight:chicken_rice"
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200
+}

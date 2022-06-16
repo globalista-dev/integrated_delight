@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "bewitchment:witchberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "integrated_delight:witchberry_jam"
+  },
+  "container": {
+    "item": "expandeddelight:glass_jar"
+  },
+  "cookingtime": 200
+}

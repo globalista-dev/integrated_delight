@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "the_aether:blueberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "integrated_delight:skyberry_jam"
+  },
+  "container": {
+    "item": "expandeddelight:glass_jar"
+  },
+  "cookingtime": 200
+}

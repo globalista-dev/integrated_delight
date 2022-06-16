@@ -8,23 +8,34 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static com.globalista.integrated_delight.ID.IDGROUP;
 import static com.globalista.integrated_delight.ID.MOD_ID;
+import static com.globalista.integrated_delight.util.IDFoodComponents.foodComponentJuice;
 
 public class IDRegister {
 
-    public static Block registerBlock(String name, Block block, ItemGroup group) {
-        registerBlockItem(name, block, group);
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
-    }
-
-    private static Item registerBlockItem(String name, Block block, ItemGroup group) {
-        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(group)));
-    }
+    // Custom item settings for Integrated Delight
+    public static final FabricItemSettings FOOD = new FabricItemSettings().group(IDGROUP);
+    public static final FabricItemSettings JUICE = new FabricItemSettings().food(foodComponentJuice).group(IDGROUP);
 
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name), item);
     }
 
+    public static Item registerCookie(String name) {
+        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name + "_cookie"), new Item(FOOD));
+    }
+
+    public static Item registerJam(String name) {
+        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name + "_jam"), new Item(FOOD));
+    }
+
+    public static Item registerJelly(String name) {
+        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name + "_jelly"), new Item(FOOD));
+    }
+
+    public static Item registerJuice(String name) {
+        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name + "_juice"), new Item(JUICE));
+    }
 }
 
