@@ -5,7 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.globalista.integrated_delight.ID.*;
+import static com.globalista.integrated_delight.ID.IDGROUP;
+import static com.globalista.integrated_delight.ID.MOD_ID;
 import static com.globalista.integrated_delight.util.IDFoodComponents.*;
 
 public class IDRegister {

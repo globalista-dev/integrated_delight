@@ -23,7 +23,6 @@ public class IDModelProvider extends FabricModelProvider {
         itemModelGenerator.register(SKY_BERRY_COOKIE, Models.GENERATED);
         itemModelGenerator.register(SHADOW_BERRY_COOKIE, Models.GENERATED);
         itemModelGenerator.register(BLOSSOM_BERRY_COOKIE, Models.GENERATED);
-        itemModelGenerator.register(HOLLY_BERRY_COOKIE, Models.GENERATED);
         itemModelGenerator.register(CRIMSON_BERRY_COOKIE, Models.GENERATED);
         itemModelGenerator.register(NIGHTSHADE_BERRY_COOKIE, Models.GENERATED);
         itemModelGenerator.register(BLUEBERRY_COOKIE, Models.GENERATED);
@@ -33,7 +32,6 @@ public class IDModelProvider extends FabricModelProvider {
         itemModelGenerator.register(SKY_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(SHADOW_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(BLOSSOM_BERRY_JAM, Models.GENERATED);
-        itemModelGenerator.register(HOLLY_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(CRIMSON_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(NIGHTSHADE_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(BLUEBERRY_JAM, Models.GENERATED);
@@ -43,7 +41,6 @@ public class IDModelProvider extends FabricModelProvider {
         // Jellies
         itemModelGenerator.register(SKY_BERRY_JELLY , Models.GENERATED);
         itemModelGenerator.register(GLOW_BERRY_JELLY, Models.GENERATED);
-        itemModelGenerator.register(HOLLY_BERRY_JELLY, Models.GENERATED);
         itemModelGenerator.register(CRIMSON_BERRY_JELLY, Models.GENERATED);
         itemModelGenerator.register(NIGHTSHADE_BERRY_JELLY, Models.GENERATED);
         itemModelGenerator.register(BLUEBERRY_JELLY, Models.GENERATED);
@@ -59,6 +56,7 @@ public class IDModelProvider extends FabricModelProvider {
         //Pies
         itemModelGenerator.register(ORANGE_PIE, Models.GENERATED);
         itemModelGenerator.register(BAOBAB_FRUIT_PIE, Models.GENERATED);
+        itemModelGenerator.register(BLACK_APPLE_PIE, Models.GENERATED);
 
         // Fruit salads
         itemModelGenerator.register(RED_BERRY_SALAD, Models.GENERATED);

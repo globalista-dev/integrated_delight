@@ -1,5 +1,6 @@
 package com.globalista.integrated_delight;
 
+import com.globalista.integrated_delight.data.IDRecipeProvider;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -8,7 +9,9 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.globalista.integrated_delight.item.IDItems.*;
+import static com.globalista.integrated_delight.data.IDRecipeProvider.callRecipes;
+import static com.globalista.integrated_delight.item.IDItems.SKY_BERRY_COOKIE;
+import static com.globalista.integrated_delight.item.IDItems.callItems;
 
 public class ID implements ModInitializer {
 
@@ -21,6 +24,7 @@ public class ID implements ModInitializer {
 	public void onInitialize() {
 
 		callItems();
+		callRecipes();
 		LOGGER.info("Globa's Integrated Delight");
 	}
 }

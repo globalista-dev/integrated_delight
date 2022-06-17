@@ -1,37 +1,42 @@
 package com.globalista.integrated_delight.data;
 
 import com.globalista.integrated_delight.item.IDItems;
-import com.nhoryzon.mc.farmersdelight.recipe.CookingPotRecipeSerializer;
 import com.nhoryzon.mc.farmersdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DefaultedList;
+import org.betterx.bclib.recipes.GridRecipe;
+import org.betterx.betterend.config.Configs;
 import org.betterx.betterend.registry.EndItems;
 import potionstudios.byg.common.item.BYGItems;
 
 import java.util.function.Consumer;
 
+import static com.globalista.integrated_delight.ID.MOD_ID;
 import static com.globalista.integrated_delight.item.IDItems.*;
 
 public class IDRecipeProvider extends FabricRecipeProvider {
     public IDRecipeProvider(FabricDataGenerator dataGenerator) { super(dataGenerator); }
 
-    public static Ingredient waterBottle = Ingredient.ofStacks(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER));
+    public static ItemConvertible waterBottle = PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER).getItem();
 
     @Override
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         pies(exporter);
         cookies(exporter);
-        jelly(exporter);
+    }
+
+    // Only used for recipes not using CraftingRecipeJsonBuilder
+    public static void callRecipes(){
+        jellies();
     }
 
     public static CraftingRecipeJsonBuilder createPieRecipe(ItemConvertible output, Ingredient input){
@@ -51,14 +56,15 @@ public class IDRecipeProvider extends FabricRecipeProvider {
         createCookieRecipe(output, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
-    public static CraftingRecipeJsonBuilder createJellyRecipe(ItemConvertible output, Ingredient input){
-        return ShapedRecipeJsonBuilder.create(output).input('G', EndItems.GELATINE).input('W', waterBottle).input('S', Items.SUGAR).input('B', input)
-                .pattern("GWS").pattern("B  ");
-    }
-
-    public static void offerJellyRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input){
-        createJellyRecipe(output, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-
+    public static void offerJellyRecipe(String name, ItemConvertible input, ItemConvertible output){
+        GridRecipe.make(MOD_ID, name, output)
+                .checkConfig(Configs.RECIPE_CONFIG)
+                .setList("JWSB")
+                .addMaterial('J', EndItems.GELATINE)
+                .addMaterial('W', PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER))
+                .addMaterial('S', Items.SUGAR)
+                .addMaterial('B', input)
+                .build();
     }
 
     // Pie recipes
@@ -69,17 +75,14 @@ public class IDRecipeProvider extends FabricRecipeProvider {
     // Cookie recipes
     public static void cookies(Consumer<RecipeJsonProvider> exporter) {
         offerCookieRecipe(exporter, CRIMSON_BERRY_COOKIE, BYGItems.CRIMSON_BERRIES.get());
-        offerCookieRecipe(exporter, HOLLY_BERRY_COOKIE, BYGItems.HOLLY_BERRY_LEAVES.get());
         offerCookieRecipe(exporter, BLUEBERRY_COOKIE, BYGItems.BLUE_BERRY.get());
         offerCookieRecipe(exporter, NIGHTSHADE_BERRY_COOKIE, BYGItems.NIGHTSHADE_BERRIES.get());
     }
 
-    // Jelly recipes
-    public static void jelly(Consumer<RecipeJsonProvider> exporter) {
-        offerJellyRecipe(exporter, CRIMSON_BERRY_JELLY, BYGItems.CRIMSON_BERRIES.get());
-        offerJellyRecipe(exporter, HOLLY_BERRY_JELLY, BYGItems.HOLLY_BERRY_LEAVES.get());
-        offerJellyRecipe(exporter, BLUEBERRY_JELLY, BYGItems.BLUE_BERRY.get());
-        offerJellyRecipe(exporter, NIGHTSHADE_BERRY_JELLY, BYGItems.NIGHTSHADE_BERRIES.get());
+    public static void jellies() {
+        offerJellyRecipe("glow_berry_jelly", Items.GLOW_BERRIES, GLOW_BERRY_JELLY);
+        offerJellyRecipe("crimson_berry_jelly", BYGItems.CRIMSON_BERRIES.get(), CRIMSON_BERRY_JELLY);
+
     }
 
 }
