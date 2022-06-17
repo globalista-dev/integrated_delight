@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "byg:crimson_berries"
+    },
+    "G": {
+      "item": "betterend:gelatine"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:potion"
+    }
+  },
+  "pattern": [
+    "GWS",
+    "B  "
+  ],
+  "result": {
+    "item": "integrated_delight:crimson_berry_jelly"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "byg:blueberries"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "WBW"
+  ],
+  "result": {
+    "item": "integrated_delight:blueberry_cookie"
+  }
+}
