@@ -32,3 +32,4 @@ bin/
 
 run/
 /src/integrated_delight/generated/.cache/
+/src/generated/resources/.cache/
