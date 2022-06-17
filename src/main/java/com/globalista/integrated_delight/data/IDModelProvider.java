@@ -58,6 +58,17 @@ public class IDModelProvider extends FabricModelProvider {
         itemModelGenerator.register(BAOBAB_FRUIT_PIE, Models.GENERATED);
         itemModelGenerator.register(BLACK_APPLE_PIE, Models.GENERATED);
 
+        // Pie slices
+        itemModelGenerator.register(ORANGE_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(PUMPKIN_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(BAOBAB_FRUIT_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(BLACK_APPLE_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(GREEN_APPLE_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(CRIMSON_BERRY_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(NIGHTSHADE_BERRY_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(BLUEBERRY_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(CAVE_PUMPKIN_PIE_SLICE, Models.GENERATED);
+
         // Fruit salads
         itemModelGenerator.register(RED_BERRY_SALAD, Models.GENERATED);
         itemModelGenerator.register(GLOWING_BERRY_SALAD, Models.GENERATED);
@@ -65,6 +76,8 @@ public class IDModelProvider extends FabricModelProvider {
         // Dishes
         itemModelGenerator.register(GARLIC_STEW, Models.GENERATED);
         itemModelGenerator.register(CHICKEN_RICE, Models.GENERATED);
+        itemModelGenerator.register(CREAMY_MUSHROOM_SOUP, Models.GENERATED);
+        itemModelGenerator.register(MUSHROOM_SOUP, Models.GENERATED);
 
     }
 

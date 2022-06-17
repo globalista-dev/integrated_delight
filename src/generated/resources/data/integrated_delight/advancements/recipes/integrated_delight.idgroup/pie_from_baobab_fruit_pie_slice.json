@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_holly_berry_leaves": {
+    "has_baobab_fruit_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "byg:holly_berry_leaves"
+              "integrated_delight:baobab_fruit_pie_slice"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "integrated_delight:holly_berry_cookie"
+        "recipe": "minecraft:pie_from_baobab_fruit_pie_slice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_holly_berry_leaves",
+      "has_baobab_fruit_pie_slice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "integrated_delight:holly_berry_cookie"
+      "minecraft:pie_from_baobab_fruit_pie_slice"
     ]
   }
 }

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "item": "minecraft:pumpkin"
+    },
+    "P": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "FFF",
+    "SPS"
+  ],
+  "result": {
+    "item": "minecraft:pumpkin_pie"
+  }
+}

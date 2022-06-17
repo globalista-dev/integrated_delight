@@ -1,6 +1,5 @@
 package com.globalista.integrated_delight;
 
-import com.globalista.integrated_delight.data.IDRecipeProvider;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
