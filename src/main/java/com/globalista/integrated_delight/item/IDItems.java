@@ -1,13 +1,13 @@
 package com.globalista.integrated_delight.item;
 
 import net.minecraft.item.Item;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.globalista.integrated_delight.util.IDRegister.*;
 
-public class IDItem {
+public class IDItems {
+
+    public static void callItems() {
+        System.out.println("Registering items");
+    }
 
     // Cookies
     public static final Item SKY_BERRY_COOKIE = registerCookie("sky_berry");
@@ -47,31 +47,20 @@ public class IDItem {
     public static final Item JOSHUA_FRUIT_JUICE = registerJuice("joshua_fruit");
 
     // Pies
+    public static final Item ORANGE_PIE = registerPie("orange");
+    public static final Item BAOBAB_FRUIT_PIE = registerPie("baobab_fruit");
+
+    // Fruit salad
+    public static final Item RED_BERRY_SALAD = registerItem("red_berry_salad", new Item(FOOD)); // Sweet berries, witchberries, holly berries, crimson berries, blossom berries, sugar and bowl
+    public static final Item GLOWING_BERRY_SALAD = registerItem("glow_berry_salad", new Item(FOOD)); // Glow berries, shadow berry, nightshade berries, blueberries, skyberry, soul berry, sugar and bowl
+
+    // Dishes
+    public static final Item GARLIC_STEW = registerItem("garlic_stew", new Item(FOOD)); // Garlic, eggs, bread, salt, porkchop and bowl
+    public static final Item CHICKEN_RICE = registerItem("chicken_rice", new Item(FOOD)); // Chicken, rice, garlic, salt, tomatoes and bowl
+    public static final Item CREAMY_MUSHROOM_SOUP = registerItem("creamy_mushroom_soup", new Item(FOOD));
 
 
 
-
-    // BEWITCHMENT INTEGRATION (garlic and witchberry usage)
-    public static final Item GARLIC_STEW = registerItem("garlic_stew", new Item(FOOD));
-    // Garlic, eggs, bread, salt, porkchop and bowl
-    public static final Item CHICKEN_RICE = registerItem("chicken_rice", new Item(FOOD));
-    // Chicken, rice, garlic, salt, tomatoes and bowl
-
-    // AETHER INTEGRATION (orange and blueberry [changed to skyberry])
-
-    // Orange and sugar
-    public static final Item ORANGE_PIE = registerItem("orange_pie", new Item(FOOD));
-    // Wheat, wheat, wheat, orange, orange, orange, sugar, pie crust and sugar
-
-    // Skyberry and sugar
-    public static final Item SKYBERRY_PIE = registerItem("skyberry_pie", new Item(FOOD));
-    // Wheat, skyberry, sugar and eggs
-
-    // BYG INTEGRATION (baobab fruit, green apple, holly berries, joshua fruit, crimson berries, nightshade berries and blueberries)
-    public static final Item RED_BERRY_SALAD = registerItem("red_berry_salad", new Item(FOOD));
-    // Sweet berries, witchberries, holly berries, crimson berries, blossom berries, sugar and bowl
-    public static final Item GLOWING_BERRY_SALAD = registerItem("red_berry_salad", new Item(FOOD));
-    // Glow berries, shadow berry, nightshade berries, blueberries, skyberry, soul berry, sugar and bowl
 
 
 

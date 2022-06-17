@@ -10,12 +10,93 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+	mavenCentral()
+
+	maven { url 'https://www.cursemaven.com' }
+	maven { url "https://maven.dblsaiko.net/" }
+	maven { url "https://maven.fabricmc.net/" }
+	maven { url 'https://maven.blamejared.com' }
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url 'https://jitpack.io' }
+	maven { url "https://maven.bai.lol" }
+
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+	maven {
+		name = "Ladysnake Libs"
+		url = "https://ladysnake.jfrog.io/artifactory/mods"
+	}
+
+}
+
+
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "curse.maven:farmersdelightfabric-482834:${project.delight_version}"
+	modImplementation "curse.maven:oh-the-biomes-youll-go-fabric-391378:${project.byg_version}"
+	modImplementation "com.github.quiqueck:BCLib:${project.bclib_repo_version}"
+	modImplementation "com.github.quiqueck:BetterEnd:${project.betterend_repo_version}"
+	modImplementation "com.github.quiqueck:BetterNether:${project.betternether_repo_version}"
+	modImplementation "curse.maven:terrablender-565956:${project.terrablender_version}"
+	include implementation("com.electronwill.night-config:toml:${project.nightconfig_version}")
+	include implementation("com.electronwill.night-config:core:${project.nightconfig_version}")
+	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
 }
+
+def useOptional(String dep) {
+	dependencies.modRuntimeOnly(dep) {
+		exclude group: 'net.fabricmc.fabric-api'
+		exclude group: 'net.fabricmc'
+		if (!dep.contains("me.shedaniel")) {
+			exclude group: 'me.shedaniel.cloth'
+			exclude group: 'me.shedaniel'
+		}
+	}
+	dependencies.modCompileOnly(dep) {
+		exclude group: 'net.fabricmc.fabric-api'
+		exclude group: 'net.fabricmc'
+		if (!dep.contains("me.shedaniel")) {
+			exclude group: 'me.shedaniel.cloth'
+			exclude group: 'me.shedaniel'
+		}
+	}
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/integrated_delight.accesswidener")
+
+	runs {
+		gameTest {
+			server()
+			vmArg "-Dfabric-api.gametest=1"
+		}
+
+		fabricDatagen {
+			client()
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.modid=integrated_delight"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+		}
+
+		configureEach {
+			runDir "../run"
+			ideConfigGenerated(true)
+		}
+	}
+
+}
+
+sourceSets.main.resources {
+	srcDir 'src/generated/resources'
+}
+
 
 processResources {
 	inputs.property "version", project.version

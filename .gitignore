@@ -31,3 +31,4 @@ bin/
 # fabric
 
 run/
+/src/integrated_delight/generated/.cache/

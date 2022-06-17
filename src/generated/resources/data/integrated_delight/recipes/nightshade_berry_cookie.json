@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "byg:nightshade_berries"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "WBW"
+  ],
+  "result": {
+    "item": "integrated_delight:nightshade_berry_cookie"
+  }
+}

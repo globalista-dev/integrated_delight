@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "gfi",
+  "id": "integrated_delight",
   "version": "${version}",
 
   "name": "Globa's Integrated Delight",
@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.globalista.integrated_delight.ID"
+    ],
+    "fabric-datagen": [
+      "com.globalista.integrated_delight.data.IDDatagenEntrypoint"
     ]
   },
 

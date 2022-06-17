@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "byg:holly_berry_leaves"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "WBW"
+  ],
+  "result": {
+    "item": "integrated_delight:holly_berry_cookie"
+  }
+}
